@@ -1,5 +1,9 @@
 # Full Stack Spotify Clone with Next.js 13: React, Tailwind, Supabase, PostgreSQL, Stripe
 
+<p align="center">
+<img alt='/' src="./images/spotify.jpg" width="900px" height="auto"/>
+</p>
+
 For DEMO, use [Stripe Testing Cards](https://stripe.com/docs/testing)
 
 Key Features:
