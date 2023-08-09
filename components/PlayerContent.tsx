@@ -118,6 +118,7 @@ const PlayerContent = ({ song, songUrl }: Props) => {
                     <Icon size={30} className="text-black" />
                 </div>
                 <AiFillStepForward onClick={onPlayNext} size={30} className="text-neutral-400 cursor-pointer hover:text-white transition" />
+                <BsShuffle size={30} className="hidden" />
             </div>
             <div className="hidden md:flex w-full justify-end pr-2">
                 <div className="flex items-center gap-x-2 w-[120px]">
