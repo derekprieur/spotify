@@ -1,4 +1,4 @@
-# Full Stack Spotify Clone with Next.js 13: React, Tailwind, Supabase, PostgreSQL, Stripe
+# Spotify Clone
 
 <p align="center">
 <img alt='/' src="/public/images/spotify.jpg" width="900px" height="auto"/>
@@ -23,8 +23,6 @@ Key Features:
 - Playlists / Liked songs system
 - Advanced Player component
 - Stripe recurring payment integration
-- How to write POST, GET, and DELETE routes in route handlers (app/api)
-- How to fetch data in server React components by directly accessing the database (WITHOUT API! like Magic!)
 - Handling relations between Server and Child components in a real-time environment
 - Cancelling Stripe subscriptions
 
