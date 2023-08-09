@@ -78,7 +78,7 @@ const PlayerContent = ({ song, songUrl }: Props) => {
 
     const toggleMute = () => {
         if (volume === 0) {
-            setVolume(1)
+            setVolume(0.5)
         } else {
             setVolume(0)
         }
