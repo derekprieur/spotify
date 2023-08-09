@@ -19,7 +19,10 @@ type Props = {
 
 const PlayerContent = ({ song, songUrl }: Props) => {
     const player = usePlayer()
-    const [volume, setVolume] = useState(0.5)
+    const [volume, setVolume] = useState(() => {
+        const savedVolume = localStorage.getItem('volume');
+        return savedVolume !== null ? parseFloat(savedVolume) : 0.5;
+    });
     const [isPlaying, setIsPlaying] = useState(false)
     const Icon = isPlaying ? BsPauseFill : BsPlayFill
     const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave
@@ -67,6 +70,10 @@ const PlayerContent = ({ song, songUrl }: Props) => {
             sound?.unload()
         }
     }, [sound])
+
+    useEffect(() => {
+        localStorage.setItem('volume', volume.toString());
+    }, [volume]);
 
     const handlePlay = () => {
         if (!isPlaying) {
