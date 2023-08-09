@@ -19,7 +19,7 @@ type Props = {
 
 const PlayerContent = ({ song, songUrl }: Props) => {
     const player = usePlayer()
-    const [volume, setVolume] = useState(1)
+    const [volume, setVolume] = useState(0.5)
     const [isPlaying, setIsPlaying] = useState(false)
     const Icon = isPlaying ? BsPauseFill : BsPlayFill
     const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave
