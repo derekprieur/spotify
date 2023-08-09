@@ -4,6 +4,7 @@ import useLoadImage from "@/hooks/useLoadImage"
 import { Song } from "@/types"
 import Image from "next/image"
 import PlayButton from "./PlayButton"
+import usePlayer from "@/hooks/usePlayer"
 
 type Props = {
     data: Song
@@ -11,7 +12,10 @@ type Props = {
 }
 
 const SongItem = ({ data, onClick }: Props) => {
+    const player = usePlayer()
     const imagePath = useLoadImage(data)
+    const isSongPlaying = player.activeId === data.id && player.isPlaying;
+
     return (
         <div className="relative group flex flex-col items-center justify-center rounded-md overflow-hidden gap-x-4 bg-neutral-400/5 cursor-pointer hover:bg-neutral-400/10 transition p-3" onClick={() => onClick(data.id)}>
             <div className="relative aspect-square w-full h-full rounded-md overflow-hidden">
@@ -22,7 +26,7 @@ const SongItem = ({ data, onClick }: Props) => {
                 <p className="text-neutral-400 text-sm pb-4 w-full truncate">By {data.author}</p>
             </div>
             <div className="absolute bottom-24 right-5">
-                <PlayButton />
+                <PlayButton isPlaying={isSongPlaying} />
             </div>
         </div>
     )

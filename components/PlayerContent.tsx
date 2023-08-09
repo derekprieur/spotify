@@ -53,12 +53,19 @@ const PlayerContent = ({ song, songUrl }: Props) => {
         songUrl,
         {
             volume,
-            onplay: () => setIsPlaying(true),
+            onplay: () => {
+                setIsPlaying(true)
+                player.play()
+            },
             onend: () => {
                 setIsPlaying(false)
                 onPlayNext()
+                player.pause()
             },
-            onpause: () => setIsPlaying(false),
+            onpause: () => {
+                setIsPlaying(false)
+                player.pause()
+            },
             format: ['mp3']
         }
     )
