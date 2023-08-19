@@ -7,7 +7,6 @@ import { getUrl } from '@/libs/helpers';
 import { createOrRetrieveCustomer } from '@/libs/supabaseAdmin';
 
 export async function POST() {
-    console.log('HERE');
   try {
     const supabase = createRouteHandlerClient({ 
       cookies

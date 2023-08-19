@@ -9,9 +9,7 @@ import { createOrRetrieveCustomer } from '@/libs/supabaseAdmin';
 export async function POST(
   request: Request
 ) {
-  console.log('HERE')
   const { price, quantity = 1, metadata = {} } = await request.json();
-  console.log('HERE NOW')
   try {
     const supabase = createRouteHandlerClient({ 
       cookies
