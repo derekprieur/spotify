@@ -98,14 +98,6 @@ const PlayerContent = ({ song, songUrl }: Props) => {
         }
     }
 
-    useEffect(() => {
-        if (player.isPlaying) {
-            play()
-        } else {
-            pause()
-        }
-    }, [player.isPlaying, play, pause])
-
     return (
         <div className="grid grid-cols-2 md:grid-cols-3 h-full">
             <div className="flex w-full justify-start">
